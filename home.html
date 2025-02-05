@@ -8,9 +8,64 @@
 </head>
 <body>
     <div class="container">
-        <h2>Bem-vindo ao Meu Blog</h2>
-        <p>Este é o seu blog pessoal.</p>
-        <button onclick="logout()">Sair</button>
+        
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Serviços</a>
+                    <ul class="dropdown-content">
+                        <li><a href="https://www.figma.com/">Design</a></li>
+                        <li><a href="#">Desenvolvimento</a></li>
+                        <li><a href="#">Consultoria</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contato</a></li>
+                <li><button class ="logout-button" onclick="logout()">Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1>
+                Bem-vindo ao meu blog! 🚀</h1>
+            <p>Aqui é um espaço para compartilhar ideias, aprender coisas novas e trocar experiências. Fique à vontade para explorar, comentar e interagir. Espero que você encontre inspiração e conteúdo útil por aqui.
+
+                Aproveite a leitura e sinta-se em casa! 😊</p>
+            <img src="https://www.mundoconectado.com.br/wp-content/uploads/2022/05/capa_145.jpg" alt="Imagem de exemplo">
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+            <img id="displayImage" src="" alt="Imagem carregada" style="max-width: 100%; display: none; margin-top: 10px;">
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <h2>Links úteis</h2>
+            <ul>
+                <li><a href="https://www.ufba.br/">Link 1 - Site da UFBA</a></li>
+                <li><a href="https://www.youtube.com/">Link 2 - Youtube para desenvolvedores</a></li>
+                <li><a href="https://stackoverflow.com/">Link 3 - Outro site</a></li>
+            </ul>
+        </aside>
+        <section class="contact-form">
+            <h2>Formulário de Contato</h2>
+            <form action="#">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+        <button class="logout-button" onclick="logout()">Sair</button>
     </div>
     <script src="script.js"></script>
 </body>

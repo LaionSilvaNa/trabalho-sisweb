@@ -1,4 +1,4 @@
-const USERS = { user: "1234" }; // Usuário pré-definido
+const USERS = { user: "ufba123" }; // Usuário pré-definido
 
 function login() {
     let username = document.getElementById("username").value;
@@ -22,6 +22,16 @@ function checkAuth() {
 function logout() {
     localStorage.removeItem("loggedIn");
     window.location.href = "login.html";
+}
+
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+        const displayImage = document.getElementById("displayImage");
+        displayImage.src = reader.result;
+        displayImage.style.display = "block";
+    };
+    reader.readAsDataURL(event.target.files[0]);
 }
 
 // Verifica se está na página inicial e se o usuário está autenticado

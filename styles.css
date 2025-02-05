@@ -1,31 +1,178 @@
+
+S
+Sistemas Web Matc82-2024
+L
+LETF01-000700
+Turmas arquivadas
+Configurações
+Atividades desenvolvidas em sala
+/* Reset de estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
 }
-.container {
-    background: white;
+
+/* Cabeçalho com imagem de fundo */
+header {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230605/pngtree-bright-colors-is-poured-into-a-black-background-image_2885679.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-radius: 8px;
 }
-input {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
     padding: 10px;
 }
-button {
-    background: #007BFF;
+
+/* Menu suspenso */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.dropdown-content li a {
     color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilização do conteúdo principal */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.content {
+    flex: 1 1 60%;
+    margin-right: 20px;
+}
+
+aside {
+    flex: 1 1 30%;
+    background: #e0f7fa;
+    padding: 15px;
+    border-radius: 10px;
+    color: #444;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilo das seções de texto */
+h1, h2 {
+    color: #fff;
+}
+
+/* Formulário de Contato */
+.contact-form form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 90%;
     padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: #444;
+    border-color: #6a11cb;
+}
+
+/* Botão de envio */
+.contact-form button {
+    background-color: #2575fc;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #6a11cb;
+}
+
+/* Estilo da imagem */
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.logout-button {
+    background: #dc3545;
+    color: white;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
 }
-button:hover {
-    background: #0056b3;
+.logout-button:hover {
+    background: #c82333;
 }
