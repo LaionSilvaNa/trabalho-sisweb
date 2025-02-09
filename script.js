@@ -38,3 +38,16 @@ function previewImage(event) {
 if (window.location.pathname.includes("home.html")) {
     checkAuth();
 }
+
+function saveText() {
+    const textInput = document.getElementById("textInput");
+    const messageList = document.getElementById("messageList");
+
+    if (textInput.value.trim() !== "") {
+        const listItem = document.createElement("li");
+        listItem.textContent = textInput.value;
+        messageList.appendChild(listItem);
+        
+        textInput.value = ""; // Limpa o campo de entrada após o envio
+    }
+}

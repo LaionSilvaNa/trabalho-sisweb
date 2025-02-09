@@ -35,9 +35,18 @@
             <p>Aqui é um espaço para compartilhar ideias, aprender coisas novas e trocar experiências. Fique à vontade para explorar, comentar e interagir. Espero que você encontre inspiração e conteúdo útil por aqui.
 
                 Aproveite a leitura e sinta-se em casa! 😊</p>
-            <img src="https://www.mundoconectado.com.br/wp-content/uploads/2022/05/capa_145.jpg" alt="Imagem de exemplo">
+            <img class="banner" src="https://neilpatel.com/wp-content/uploads/2017/07/corporatepersonalblog.jpg" alt="Imagem de exemplo">
+            <div class="content-text">
+            <!-- Área de envio de texto -->
+            <textarea id="textInput" placeholder="Escrever o seu ToDo aqui..."></textarea>
+            <button type="button" onclick="saveText()">Enviar Texto</button>
+            </div>
+            <!-- Lista de mensagens enviadas -->
+            <ul id="messageList"></ul>
+            
+            <!-- Área de envio de imagem -->
             <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
-            <img id="displayImage" src="" alt="Imagem carregada" style="max-width: 100%; display: none; margin-top: 10px;">
+            <img id="displayImage" src="" alt="Imagem carregada">
         </section>
 
         <!-- Sidebar -->

@@ -84,7 +84,7 @@ main {
 
 aside {
     flex: 1 1 30%;
-    background: #e0f7fa;
+    background: #8b8b8b;
     padding: 15px;
     border-radius: 10px;
     color: #444;
@@ -143,14 +143,11 @@ h1, h2 {
 .contact-form button:hover {
     background-color: #6a11cb;
 }
-
-/* Estilo da imagem */
-img {
+.banner{
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    margin: 20px 0;
+    height: 300px;  
+    object-fit: cover;
+
 }
 
 /* Rodapé */
@@ -175,4 +172,79 @@ footer {
 }
 .logout-button:hover {
     background: #c82333;
+}
+#textInput {
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    resize: none;
+    background-color: #f8f9fa;
+}
+
+#textInput:focus {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+}
+
+#displayImage {
+    max-width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    display: none;
+    object-fit: contain;
+}
+/* Estilização da lista de mensagens */
+#messageList {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#messageList li {
+    color: gray;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    border-left: 5px solid #007BFF;
+    transition: 0.3s ease-in-out;
+}
+
+#messageList li:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
 }

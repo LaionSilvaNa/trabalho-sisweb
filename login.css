@@ -6,7 +6,8 @@ body {
     height: 100vh;
     background-color: #e0f7fa;
 }
-.login-container {
+.container {
+    align-items: center;
     background: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -33,4 +34,10 @@ button {
 }
 button:hover {
     background: #0056b3;
+}
+
+.brasao{
+    width: 100px;
+    height: 125px;
+    object-fit: contain;
 }
