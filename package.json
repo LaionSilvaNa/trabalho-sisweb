@@ -1,0 +1,24 @@
+{
+  "name": "trabalho-sisweb",
+  "version": "1.0.0",
+  "description": "Um sistema web com autenticação de sessão para um blog pessoal.\r Este sistema inclui:\r ✅ Login com usuário fixo (user: ufba123) armazenado no código\r ✅ Uso de LocalStorage para autenticação\r ✅ Redirecionamento automático se o usuário não estiver logado\r ✅ Página inicial de um blog ToDo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaionSilvaNa/trabalho-sisweb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaionSilvaNa/trabalho-sisweb/issues"
+  },
+  "homepage": "https://github.com/LaionSilvaNa/trabalho-sisweb#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

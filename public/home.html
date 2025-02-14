@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Serviços</a>
+                    <ul class="dropdown-content">
+                        <li><a href="https://www.figma.com/">Design</a></li>
+                        <li><a href="#">Desenvolvimento</a></li>
+                        <li><a href="#">Consultoria</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contato</a></li>
+                <li><button class="logout-button" onclick="logout()">Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1>Bem-vindo ao meu blog! 🚀</h1>
+            <p>Aqui é um espaço para compartilhar ideias, aprender coisas novas e trocar experiências.</p>
+            <img class="banner" src="https://neilpatel.com/wp-content/uploads/2017/07/corporatepersonalblog.jpg" alt="Imagem de exemplo">
+            
+            <!-- Área de envio de texto -->
+            <div>
+                <H1>Validador de números</H1>
+                <form id="dataForm">
+                    <label for="numericInput">Digite um número:</label>
+                    <input type="text" id="numericInput" name="numericInput" required>
+                    <button type="submit">Enviar</button>
+                </form>
+                <p id="responseMessage"></p>
+            </div>
+            <div class="content-text">
+                <H1>Meu ToDo</H1>
+                <!-- Área de envio de texto -->
+                <textarea id="textInput" placeholder="Escrever o seu ToDo aqui..."></textarea>
+                <button type="button" onclick="saveText()">Enviar Texto</button>
+                </div>
+                <!-- Lista de mensagens enviadas -->
+                <ul id="messageList"></ul>
+            <!-- Lista de mensagens enviadas -->
+            <ul id="messageList"></ul>
+            <div class="content-text">
+            <!-- Área de envio de imagem -->
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+            <img id="displayImage" src="" alt="Imagem carregada">
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <h2>Links úteis</h2>
+            <ul>
+                <li><a href="https://www.ufba.br/">UFBA</a></li>
+                <li><a href="https://www.youtube.com/">YouTube</a></li>
+                <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+            </ul>
+            <section class="info-section">
+                <h2>Informações do Servidor</h2>
+                <button id="fetchInfo">Carregar Informações</button>
+                <div id="serverInfo">
+                    <p><strong>Serviço:</strong> <span id="serviceName"></span></p>
+                    <p><strong>Versão:</strong> <span id="serviceVersion"></span></p>
+                    <p><strong>Status:</strong> <span id="serviceStatus"></span></p>
+                </div>
+            </section>
+        </aside>
+    </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const input = document.getElementById("numericInput").value;
+            
+            if (!/^[0-9]+$/.test(input)) {
+                document.getElementById("responseMessage").innerText = "Erro: Apenas números são permitidos.";
+                return;
+            }
+            
+            fetch("http://localhost:5000/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ numero: parseInt(input) })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("responseMessage").innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById("responseMessage").innerText = "Erro ao enviar os dados.";
+            });
+        });
+    </script>
+</body>
+</html>
